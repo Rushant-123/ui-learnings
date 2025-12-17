@@ -2,11 +2,12 @@
   "name": "ux-ui-curriculum-planner",
   "version": "1.0.0",
   "description": "UX/UI Design Curriculum Planner with progress tracking and assignment submission",
+  "type": "module",
   "main": "script.js",
   "scripts": {
     "dev": "node server.js",
     "dev:static": "serve .",
-    "build": "echo 'No build step required for static site'",
+    "build": "echo 'Static site ready for deployment'",
     "start": "serve ."
   },
   "dependencies": {

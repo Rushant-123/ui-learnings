@@ -1,0 +1,27 @@
+# Local development files
+.env.local
+.env.*.local
+
+# Development server
+server.js
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Git files
+.git/
+.gitignore
+
+# Documentation (optional - remove if you want these deployed)
+DEPLOYMENT.md
+
+# Node modules (Vercel installs fresh)
+node_modules/
+
+# Lock files
+package-lock.json
+yarn.lock
+
