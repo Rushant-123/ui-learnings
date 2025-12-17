@@ -225,3 +225,4 @@ MIT License - see LICENSE file for details
 ## Support
 
 For questions or issues, please create an issue in the repository or contact the maintainers.
+
