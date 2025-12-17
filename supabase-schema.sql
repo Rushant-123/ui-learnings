@@ -1,5 +1,6 @@
 -- Enable Row Level Security
-ALTER DATABASE postgres SET "app.jwt_secret" TO 'your-jwt-secret';
+-- Note: JWT secret is managed automatically by Supabase
+-- ALTER DATABASE postgres SET "app.jwt_secret" TO 'your-jwt-secret';
 
 -- Users table (extends Supabase auth.users)
 CREATE TABLE public.profiles (
