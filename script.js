@@ -258,46 +258,116 @@ class CurriculumPlanner {
     }
 
     switchTab(tabName) {
-        // Prevent multiple rapid clicks
-        if (this.isTabSwitching) return;
-        this.isTabSwitching = true;
-
-        // Update tab buttons immediately
-        document.querySelectorAll('.tab-btn').forEach(btn => {
-            btn.classList.toggle('active', btn.dataset.tab === tabName);
-        });
-
-        // Show loading state for content-heavy tabs
-        const targetContent = document.getElementById(`${tabName}-tab`);
-        if (['portfolio', 'analytics', 'mywork'].includes(tabName) && !targetContent.dataset.loaded) {
-            this.showTabLoading(tabName);
+        // Prevent multiple rapid clicks with timeout protection
+        if (this.isTabSwitching) {
+            console.log('Tab switch already in progress, ignoring click');
+            return;
         }
 
-        // Update tab content with minimal delay
-        setTimeout(() => {
+        // Set flag with automatic reset after 10 seconds as safety net
+        this.isTabSwitching = true;
+        const safetyTimeout = setTimeout(() => {
+            console.warn('Tab switching safety timeout triggered for', tabName);
+            this.isTabSwitching = false;
+        }, 10000);
+
+        try {
+            // Update tab buttons immediately
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.tab === tabName);
+            });
+
+            // Show loading state for content-heavy tabs
+            const targetContent = document.getElementById(`${tabName}-tab`);
+            if (['portfolio', 'analytics', 'mywork'].includes(tabName) && !targetContent.dataset.loaded) {
+                this.showTabLoading(tabName);
+            }
+
+            // Update tab content visibility
             document.querySelectorAll('.tab-content').forEach(content => {
                 content.classList.toggle('active', content.id === `${tabName}-tab`);
             });
-        }, 10);
 
-        // Render content based on tab (use requestIdleCallback for non-critical tabs)
-        if (tabName === 'resources') {
-            this.renderResources();
+            // Render content based on tab with timeout protection
+            if (tabName === 'resources') {
+                this.renderResources();
+                this.isTabSwitching = false;
+                clearTimeout(safetyTimeout);
+            } else if (tabName === 'portfolio') {
+                // Add timeout to renderPortfolio
+                const portfolioTimeout = setTimeout(() => {
+                    console.error('Portfolio render timeout');
+                    this.hideTabLoading('portfolio');
+                    this.showTabError('portfolio', 'Loading timed out. Please try again.');
+                }, 8000);
+
+                this.renderPortfolio()
+                    .then(() => {
+                        clearTimeout(portfolioTimeout);
+                    })
+                    .catch(error => {
+                        console.error('Portfolio render error:', error);
+                        clearTimeout(portfolioTimeout);
+                        this.hideTabLoading('portfolio');
+                        this.showTabError('portfolio', 'Failed to load portfolio. Please try again.');
+                    })
+                    .finally(() => {
+                        this.isTabSwitching = false;
+                        clearTimeout(safetyTimeout);
+                    });
+            } else if (tabName === 'analytics') {
+                // Add timeout to renderAnalytics
+                const analyticsTimeout = setTimeout(() => {
+                    console.error('Analytics render timeout');
+                    this.hideTabLoading('analytics');
+                    this.showTabError('analytics', 'Loading timed out. Please try again.');
+                }, 8000);
+
+                this.renderAnalytics()
+                    .then(() => {
+                        clearTimeout(analyticsTimeout);
+                    })
+                    .catch(error => {
+                        console.error('Analytics render error:', error);
+                        clearTimeout(analyticsTimeout);
+                        this.hideTabLoading('analytics');
+                        this.showTabError('analytics', 'Failed to load analytics. Please try again.');
+                    })
+                    .finally(() => {
+                        this.isTabSwitching = false;
+                        clearTimeout(safetyTimeout);
+                    });
+            } else if (tabName === 'mywork') {
+                // Add timeout to renderMyWork
+                const myworkTimeout = setTimeout(() => {
+                    console.error('My Work render timeout');
+                    this.hideTabLoading('mywork');
+                    this.showTabError('mywork', 'Loading timed out. Please try again.');
+                }, 8000);
+
+                this.renderMyWork()
+                    .then(() => {
+                        clearTimeout(myworkTimeout);
+                    })
+                    .catch(error => {
+                        console.error('My Work render error:', error);
+                        clearTimeout(myworkTimeout);
+                        this.hideTabLoading('mywork');
+                        this.showTabError('mywork', 'Failed to load work. Please try again.');
+                    })
+                    .finally(() => {
+                        this.isTabSwitching = false;
+                        clearTimeout(safetyTimeout);
+                    });
+            } else {
+                // Curriculum tab - no async operations
+                this.isTabSwitching = false;
+                clearTimeout(safetyTimeout);
+            }
+        } catch (error) {
+            console.error('Tab switching error:', error);
             this.isTabSwitching = false;
-        } else if (tabName === 'portfolio') {
-            this.renderPortfolio().finally(() => {
-                this.isTabSwitching = false;
-            });
-        } else if (tabName === 'analytics') {
-            this.renderAnalytics().finally(() => {
-                this.isTabSwitching = false;
-            });
-        } else if (tabName === 'mywork') {
-            this.renderMyWork().finally(() => {
-                this.isTabSwitching = false;
-            });
-        } else {
-            this.isTabSwitching = false;
+            clearTimeout(safetyTimeout);
         }
     }
 
@@ -328,6 +398,28 @@ class CurriculumPlanner {
         // Mark as loaded
         const tabContent = document.getElementById(`${tabName}-tab`);
         tabContent.dataset.loaded = 'true';
+    }
+
+    showTabError(tabName, message) {
+        const container = document.querySelector(`#${tabName}-tab .${tabName}-content`);
+        if (!container) return;
+
+        const errorHTML = `
+            <div class="tab-error">
+                <div class="error-content">
+                    <i class="fas fa-exclamation-triangle error-icon"></i>
+                    <h3>Loading Error</h3>
+                    <p>${message}</p>
+                    <button class="retry-btn" onclick="window.curriculumPlanner.switchTab('${tabName}')">
+                        <i class="fas fa-redo"></i>
+                        Try Again
+                    </button>
+                </div>
+            </div>
+        `;
+
+        // Replace existing content or append to empty container
+        container.innerHTML = errorHTML;
     }
 
     renderCurriculum() {
@@ -408,6 +500,10 @@ class CurriculumPlanner {
 
     async renderPortfolio() {
         const container = document.getElementById('portfolio-content');
+        if (!container) return;
+
+        // Clear any existing error states
+        container.innerHTML = '';
 
         if (!this.currentUser) {
             this.hideTabLoading('portfolio');
@@ -424,17 +520,22 @@ class CurriculumPlanner {
         }
 
         try {
-            // Fetch portfolio data with error handling
+            // Fetch portfolio data with timeout and better error handling
+            const portfolioPromise = fetch('/api/portfolio', {
+                headers: { 'Authorization': `Bearer ${this.userToken}` },
+                signal: AbortSignal.timeout(5000) // 5 second timeout
+            });
+
             const portfolioResult = await Promise.resolve(
-                fetch('/api/portfolio', {
-                    headers: { 'Authorization': `Bearer ${this.userToken}` }
-                }).then(async (response) => ({
+                portfolioPromise.then(async (response) => ({
                     success: response.ok,
                     data: response.ok ? await response.json() : { portfolio: [] }
-                })).catch(() => ({
-                    success: false,
-                    data: { portfolio: [] }
-                }))
+                })).catch(error => {
+                    if (error.name === 'TimeoutError') {
+                        throw new Error('Request timed out');
+                    }
+                    throw error;
+                })
             );
 
             const userPortfolio = portfolioResult.data.portfolio || [];
@@ -457,19 +558,28 @@ class CurriculumPlanner {
 
             // Hide loading and update content
             this.hideTabLoading('portfolio');
-            container.innerHTML = '';
             container.appendChild(portfolioGrid);
 
         } catch (error) {
             console.error('Portfolio loading error:', error);
             this.hideTabLoading('portfolio');
+
+            const errorMessage = error.message === 'Request timed out'
+                ? 'Request timed out. Please check your connection.'
+                : 'Failed to load portfolio data. Please try again.';
+
             container.innerHTML = `
                 <div class="portfolio-error">
                     <i class="fas fa-exclamation-triangle error-icon"></i>
                     <h3>Failed to load portfolio</h3>
-                    <p>Please try refreshing the page.</p>
+                    <p>${errorMessage}</p>
+                    <button class="retry-btn" onclick="window.curriculumPlanner.switchTab('portfolio')">
+                        <i class="fas fa-redo"></i>
+                        Try Again
+                    </button>
                 </div>
             `;
+            throw error; // Re-throw so the timeout handler catches it
         }
     }
 
@@ -956,6 +1066,10 @@ class CurriculumPlanner {
 
     async renderMyWork() {
         const container = document.getElementById('mywork-content');
+        if (!container) return;
+
+        // Clear any existing error states
+        container.innerHTML = '';
 
         if (!this.currentUser) {
             this.hideTabLoading('mywork');
@@ -972,17 +1086,22 @@ class CurriculumPlanner {
         }
 
         try {
-            // Fetch assignments with error handling
+            // Fetch assignments with timeout
+            const assignmentsPromise = fetch('/api/assignments', {
+                headers: { 'Authorization': `Bearer ${this.userToken}` },
+                signal: AbortSignal.timeout(5000) // 5 second timeout
+            });
+
             const assignmentsResult = await Promise.resolve(
-                fetch('/api/assignments', {
-                    headers: { 'Authorization': `Bearer ${this.userToken}` }
-                }).then(async (response) => ({
+                assignmentsPromise.then(async (response) => ({
                     success: response.ok,
                     data: response.ok ? await response.json() : { assignments: [] }
-                })).catch(() => ({
-                    success: false,
-                    data: { assignments: [] }
-                }))
+                })).catch(error => {
+                    if (error.name === 'TimeoutError') {
+                        throw new Error('Request timed out');
+                    }
+                    throw error;
+                })
             );
 
             const { assignments } = assignmentsResult.data;
@@ -1022,19 +1141,28 @@ class CurriculumPlanner {
 
             // Hide loading and update content
             this.hideTabLoading('mywork');
-            container.innerHTML = '';
             container.appendChild(workSections);
 
         } catch (error) {
             console.error('My work loading error:', error);
             this.hideTabLoading('mywork');
+
+            const errorMessage = error.message === 'Request timed out'
+                ? 'Request timed out. Please check your connection.'
+                : 'Failed to load work data. Please try again.';
+
             container.innerHTML = `
                 <div class="mywork-error">
                     <i class="fas fa-exclamation-triangle error-icon"></i>
                     <h3>Failed to load your work</h3>
-                    <p>Please try refreshing the page.</p>
+                    <p>${errorMessage}</p>
+                    <button class="retry-btn" onclick="window.curriculumPlanner.switchTab('mywork')">
+                        <i class="fas fa-redo"></i>
+                        Try Again
+                    </button>
                 </div>
             `;
+            throw error; // Re-throw so the timeout handler catches it
         }
     }
 
@@ -1263,6 +1391,10 @@ class CurriculumPlanner {
 
     async renderAnalytics() {
         const container = document.getElementById('analytics-content');
+        if (!container) return;
+
+        // Clear any existing error states
+        container.innerHTML = '';
 
         if (!this.currentUser) {
             this.hideTabLoading('analytics');
@@ -1279,18 +1411,27 @@ class CurriculumPlanner {
         }
 
         try {
+            // Create AbortController for timeout management
+            const controller = new AbortController();
+            const timeoutId = setTimeout(() => controller.abort(), 8000);
+
             // Use Promise.allSettled for better error handling and performance
             const [progressResult, assignmentsResult, portfolioResult] = await Promise.allSettled([
                 fetch('/api/progress', {
-                    headers: { 'Authorization': `Bearer ${this.userToken}` }
+                    headers: { 'Authorization': `Bearer ${this.userToken}` },
+                    signal: controller.signal
                 }),
                 fetch('/api/assignments', {
-                    headers: { 'Authorization': `Bearer ${this.userToken}` }
+                    headers: { 'Authorization': `Bearer ${this.userToken}` },
+                    signal: controller.signal
                 }),
                 fetch('/api/portfolio', {
-                    headers: { 'Authorization': `Bearer ${this.userToken}` }
+                    headers: { 'Authorization': `Bearer ${this.userToken}` },
+                    signal: controller.signal
                 })
             ]);
+
+            clearTimeout(timeoutId);
 
             // Safely extract data with fallbacks
             const progressData = progressResult.status === 'fulfilled' && progressResult.value.ok
@@ -1315,13 +1456,23 @@ class CurriculumPlanner {
         } catch (error) {
             console.error('Analytics loading error:', error);
             this.hideTabLoading('analytics');
+
+            const errorMessage = error.name === 'AbortError'
+                ? 'Request timed out. Please check your connection.'
+                : 'Failed to load analytics data. Please try again.';
+
             container.innerHTML = `
                 <div class="analytics-error">
                     <i class="fas fa-exclamation-triangle error-icon"></i>
                     <h3>Failed to load analytics</h3>
-                    <p>Please try refreshing the page.</p>
+                    <p>${errorMessage}</p>
+                    <button class="retry-btn" onclick="window.curriculumPlanner.switchTab('analytics')">
+                        <i class="fas fa-redo"></i>
+                        Try Again
+                    </button>
                 </div>
             `;
+            throw error; // Re-throw so the timeout handler catches it
         }
     }
 
