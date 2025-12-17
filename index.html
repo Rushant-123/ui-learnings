@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UX/UI Design Curriculum Planner</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="logo-section">
+                <i class="fas fa-palette logo-icon"></i>
+                <h1>UX/UI Design Curriculum</h1>
+            </div>
+            <nav class="tab-navigation">
+                <button class="tab-btn active" data-tab="curriculum" title="Curriculum">
+                    <i class="fas fa-book"></i>
+                    <span class="tab-text">Curriculum</span>
+                </button>
+                <button class="tab-btn" data-tab="resources" title="Resources">
+                    <i class="fas fa-link"></i>
+                    <span class="tab-text">Resources</span>
+                </button>
+                <button class="tab-btn" data-tab="portfolio" title="Portfolio">
+                    <i class="fas fa-briefcase"></i>
+                    <span class="tab-text">Portfolio</span>
+                </button>
+                <button class="tab-btn" data-tab="analytics" title="Analytics">
+                    <i class="fas fa-chart-bar"></i>
+                    <span class="tab-text">Analytics</span>
+                </button>
+                <button class="tab-btn" data-tab="mywork" title="My Work">
+                    <i class="fas fa-folder-open"></i>
+                    <span class="tab-text">My Work</span>
+                </button>
+            </nav>
+            <div class="header-actions">
+                <button id="theme-toggle" class="theme-toggle" title="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button id="progress-view" class="progress-btn">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Progress</span>
+                </button>
+                <div id="auth-section" class="auth-section">
+                    <button id="auth-btn" class="auth-btn">
+                        <i class="fas fa-user"></i>
+                        <span>Sign In</span>
+                    </button>
+                    <div id="user-menu" class="user-menu hidden">
+                        <div id="user-info" class="user-info"></div>
+                        <button id="sign-out-btn" class="sign-out-btn">
+                            <i class="fas fa-sign-out-alt"></i>
+                            Sign Out
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <!-- Curriculum Tab -->
+        <section id="curriculum-tab" class="tab-content active">
+            <div class="curriculum-container">
+            <div class="curriculum-header">
+                <h2>12-Week Path to YC Startup Internship</h2>
+                <p class="curriculum-description">A comprehensive curriculum for absolute beginners to become internship-ready for YC-level startups</p>
+                <div class="stats-bar">
+                    <div class="stat-item">
+                        <span class="stat-number" id="completed-weeks">0</span>
+                        <span class="stat-label">WEEKS COMPLETED</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" id="total-tasks">0</span>
+                        <span class="stat-label">TASKS TOTAL</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" id="completed-tasks">0</span>
+                        <span class="stat-label">TASKS DONE</span>
+                    </div>
+                </div>
+            </div>
+
+            <div id="curriculum-weeks" class="weeks-container">
+                <!-- Weeks will be dynamically loaded here -->
+            </div>
+        </div>
+        </section>
+
+        <!-- Resources Tab -->
+        <section id="resources-tab" class="tab-content">
+            <div class="resources-container">
+                <div class="resources-header">
+                    <h2>All Learning Resources</h2>
+                    <p class="resources-description">Access all curriculum resources organized by week and category</p>
+                </div>
+                <div id="resources-content" class="resources-content">
+                    <!-- Resources will be dynamically loaded here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Tab -->
+        <section id="portfolio-tab" class="tab-content">
+            <div class="portfolio-container">
+                <div class="portfolio-header">
+                    <h2>Your Portfolio Journey</h2>
+                    <p class="portfolio-description">Track your major portfolio milestones and build your design portfolio</p>
+                </div>
+                <div id="portfolio-content" class="portfolio-content">
+                    <!-- Portfolio milestones will be dynamically loaded here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Analytics Tab -->
+        <section id="analytics-tab" class="tab-content">
+            <div class="analytics-container">
+                <div class="analytics-header">
+                    <h2>Learning Analytics</h2>
+                    <p class="analytics-description">Track your progress, identify patterns, and get personalized recommendations</p>
+                </div>
+                <div id="analytics-content" class="analytics-content">
+                    <!-- Analytics dashboard will be dynamically loaded here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- My Work Tab -->
+        <section id="mywork-tab" class="tab-content">
+            <div class="mywork-container">
+                <div class="mywork-header">
+                    <h2>My Work</h2>
+                    <p class="mywork-description">View your submitted assignments and track your progress</p>
+                </div>
+                <div id="mywork-content" class="mywork-content">
+                    <!-- Work submissions will be dynamically loaded here -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Week Detail Modal -->
+    <div id="week-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modal-week-title">Week Details</h3>
+                <button class="modal-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div id="modal-week-content" class="modal-body">
+                <!-- Week content will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Progress Modal -->
+    <div id="progress-modal" class="modal">
+        <div class="modal-content progress-modal-content">
+            <div class="modal-header">
+                <h3>Your Progress</h3>
+                <button class="modal-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="progress-overview">
+                    <div class="progress-circle">
+                        <svg class="progress-ring" width="120" height="120">
+                            <circle class="progress-ring-circle-bg" stroke="#e6e6e6" stroke-width="8" fill="transparent" r="50" cx="60" cy="60"/>
+                            <circle class="progress-ring-circle" stroke="#4CAF50" stroke-width="8" fill="transparent" r="50" cx="60" cy="60"
+                                    style="stroke-dasharray: 314; stroke-dashoffset: 314;"/>
+                        </svg>
+                        <div class="progress-text">
+                            <span id="overall-progress">0%</span>
+                        </div>
+                    </div>
+                    <div class="progress-details">
+                        <div class="progress-item">
+                            <span class="progress-label">Weeks Completed:</span>
+                            <span id="progress-weeks">0/12</span>
+                        </div>
+                        <div class="progress-item">
+                            <span class="progress-label">Tasks Completed:</span>
+                            <span id="progress-tasks">0/0</span>
+                        </div>
+                        <div class="progress-item">
+                            <span class="progress-label">Portfolio Items:</span>
+                            <span id="progress-portfolio">0/3</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="progress-breakdown">
+                    <h4>Weekly Progress</h4>
+                    <div id="weekly-progress-bars">
+                        <!-- Progress bars will be loaded here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Authentication Modal -->
+    <div id="auth-modal" class="modal">
+        <div class="modal-content auth-modal-content">
+            <div class="modal-header">
+                <h3 id="auth-modal-title">Sign In</h3>
+                <button class="modal-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="auth-form" class="auth-form">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" required>
+                    </div>
+                    <div id="name-group" class="form-group hidden">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" id="fullName">
+                    </div>
+                    <button type="submit" id="auth-submit-btn" class="auth-submit-btn">
+                        Sign In
+                    </button>
+                </form>
+                <div class="auth-toggle">
+                    <span id="auth-toggle-text">Don't have an account?</span>
+                    <button id="auth-toggle-btn" class="auth-toggle-btn">Sign Up</button>
+                </div>
+                <div id="auth-message" class="auth-message hidden"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Portfolio Submission Modal -->
+    <div id="portfolio-modal" class="modal">
+        <div class="modal-content portfolio-modal-content">
+            <div class="modal-header">
+                <h3 id="portfolio-modal-title">Submit Portfolio Milestone</h3>
+                <button class="modal-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div id="portfolio-milestone-info" class="portfolio-milestone-info">
+                    <!-- Milestone info will be loaded here -->
+                </div>
+                <form id="portfolio-form" class="portfolio-form">
+                    <div class="form-group">
+                        <label for="portfolio-description">Project Description</label>
+                        <textarea id="portfolio-description" rows="4" placeholder="Describe your portfolio milestone project..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Deliverables</label>
+                        <div id="deliverables-list" class="deliverables-list">
+                            <!-- Deliverables checkboxes will be loaded here -->
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="portfolio-links">Project Links</label>
+                        <input type="url" id="portfolio-links" placeholder="https://your-portfolio-link.com">
+                        <small class="form-hint">Add links to your live projects, Figma files, or portfolio website</small>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" id="portfolio-submit-btn" class="portfolio-submit-btn">
+                            Submit Milestone
+                        </button>
+                    </div>
+                </form>
+                <div id="portfolio-message" class="portfolio-message hidden"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Assignment Submission Modal -->
+    <div id="assignment-modal" class="modal">
+        <div class="modal-content assignment-modal-content">
+            <div class="modal-header">
+                <h3 id="assignment-modal-title">Submit Assignment</h3>
+                <button class="modal-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div id="assignment-info" class="assignment-info">
+                    <!-- Assignment info will be loaded here -->
+                </div>
+                <form id="assignment-form" class="assignment-form">
+                    <div class="form-group">
+                        <label for="assignment-content">Your Work</label>
+                        <textarea id="assignment-content" rows="6" placeholder="Write your assignment here..."></textarea>
+                        <small class="form-hint">For written assignments, provide your complete answer here</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Upload Files</label>
+                        <div id="file-upload-area" class="file-upload-area">
+                            <div class="upload-zone">
+                                <i class="fas fa-cloud-upload-alt upload-icon"></i>
+                                <p>Drag & drop files here or <span class="upload-link">browse</span></p>
+                                <small>Supported: Images, PDF, Text files, ZIP (Max 10MB)</small>
+                            </div>
+                            <input type="file" id="file-input" multiple accept="image/*,.pdf,.txt,.md,.zip" style="display: none;">
+                        </div>
+                        <div id="file-list" class="file-list"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="assignment-links">External Links (Optional)</label>
+                        <input type="url" id="assignment-links" placeholder="https://your-figma-link.com">
+                        <small class="form-hint">Add links to Figma, CodePen, GitHub, or other external resources</small>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" id="assignment-submit-btn" class="assignment-submit-btn">
+                            Submit Assignment
+                        </button>
+                    </div>
+                </form>
+                <div id="assignment-message" class="assignment-message hidden"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Reflection Submission Modal -->
+    <div id="reflection-modal" class="modal">
+        <div class="modal-content reflection-modal-content">
+            <div class="modal-header">
+                <h3 id="reflection-modal-title">Week Reflections</h3>
+                <button class="modal-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div id="reflection-info" class="reflection-info">
+                    <!-- Reflection info will be loaded here -->
+                </div>
+                <form id="reflection-form" class="reflection-form">
+                    <div id="reflection-questions" class="reflection-questions">
+                        <!-- Reflection questions will be loaded here -->
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" id="reflection-save-btn" class="reflection-save-btn">
+                            Save Progress
+                        </button>
+                        <button type="button" id="reflection-submit-btn" class="reflection-submit-btn">
+                            Submit Reflections
+                        </button>
+                    </div>
+                </form>
+                <div id="reflection-message" class="reflection-message hidden"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

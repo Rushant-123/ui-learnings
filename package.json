@@ -1,0 +1,22 @@
+{
+  "name": "ux-ui-curriculum-planner",
+  "version": "1.0.0",
+  "description": "UX/UI Design Curriculum Planner with progress tracking and assignment submission",
+  "main": "script.js",
+  "scripts": {
+    "dev": "node server.js",
+    "dev:static": "serve .",
+    "build": "echo 'No build step required for static site'",
+    "start": "serve ."
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.38.5",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "serve": "^14.2.1"
+  },
+  "keywords": ["ux", "ui", "design", "curriculum", "education"],
+  "author": "",
+  "license": "MIT"
+}

@@ -1,0 +1,581 @@
+{
+  "title": "12-Week UX/UI Design Curriculum for YC Startup Internships",
+  "description": "A comprehensive curriculum for absolute beginners to become internship-ready for YC-level startups",
+  "weeks": [
+    {
+      "week_number": 1,
+      "title": "UX/UI Foundations: Introduction to Design Principles",
+      "objective": "Master basic design principles, user-centered thinking, and understand the difference between UX and UI design",
+      "daily_tasks": [
+        {
+          "day": "Monday",
+          "description": "Complete Codecademy 'What is UX?' and 'What is UI?' modules",
+          "resource_link": "https://www.codecademy.com/learn/intro-to-ui-ux",
+          "deliverable": "Create a 1-page summary explaining UX vs UI in your own words. Upload as PDF to planner."
+        },
+        {
+          "day": "Tuesday",
+          "description": "Complete Codecademy 'User Research' and 'User Personas' modules",
+          "resource_link": "https://www.codecademy.com/learn/intro-to-ui-ux",
+          "deliverable": "Design a basic user persona for a mobile banking app. Include demographics, goals, and pain points. Export as PNG."
+        },
+        {
+          "day": "Wednesday",
+          "description": "Complete Codecademy 'Wireframing' module",
+          "resource_link": "https://www.codecademy.com/learn/intro-to-ui-ux",
+          "deliverable": "Create a low-fidelity wireframe for a simple e-commerce product page using pen and paper or digital tool. Photograph/upload."
+        },
+        {
+          "day": "Thursday",
+          "description": "Complete Codecademy 'Prototyping' module",
+          "resource_link": "https://www.codecademy.com/learn/intro-to-ui-ux",
+          "deliverable": "Build a basic interactive prototype for a login flow using Figma or similar tool. Share Figma link."
+        },
+        {
+          "day": "Friday",
+          "description": "Review Week 1 materials and complete Codecademy assessments",
+          "resource_link": "https://www.codecademy.com/learn/intro-to-ui-ux",
+          "deliverable": "Answer: 'How would you approach redesigning a confusing checkout process?' Write 200-300 words."
+        }
+      ],
+      "portfolio_milestones": [],
+      "reflection_questions": [
+        "What surprised you most about UX/UI design this week?",
+        "How has your understanding of user-centered design changed?",
+        "What design principle do you find most challenging to apply?"
+      ]
+    },
+    {
+      "week_number": 2,
+      "title": "Design Systems & Visual Hierarchy",
+      "objective": "Learn design systems, visual hierarchy, typography, and color theory fundamentals",
+      "daily_tasks": [
+        {
+          "day": "Monday",
+          "description": "Complete Codecademy 'Design Systems' and 'Visual Hierarchy' modules",
+          "resource_link": "https://www.codecademy.com/learn/intro-to-ui-ux",
+          "deliverable": "Create a mood board with 5 examples of good visual hierarchy from existing apps/websites. Include annotations."
+        },
+        {
+          "day": "Tuesday",
+          "description": "Complete Codecademy 'Typography' and 'Color Theory' modules",
+          "resource_link": "https://www.codecademy.com/learn/intro-to-ui-ux",
+          "deliverable": "Design a basic type scale and color palette for a health & fitness app. Show 3 variations."
+        },
+        {
+          "day": "Wednesday",
+          "description": "Complete Codecademy 'Accessibility' module",
+          "resource_link": "https://www.codecademy.com/learn/intro-to-ui-ux",
+          "deliverable": "Audit an existing website for accessibility issues. List 5 problems and suggest fixes."
+        },
+        {
+          "day": "Thursday",
+          "description": "Complete Codecademy 'Usability Testing' module",
+          "resource_link": "https://www.codecademy.com/learn/intro-to-ui-ux",
+          "deliverable": "Write a usability test script for testing a mobile app's onboarding flow. Include 5 test tasks."
+        },
+        {
+          "day": "Friday",
+          "description": "Complete remaining Codecademy modules and final project",
+          "resource_link": "https://www.codecademy.com/learn/intro-to-ui-ux",
+          "deliverable": "Build a complete wireframe and prototype for a simple mobile app concept. Include user flow diagram."
+        }
+      ],
+      "portfolio_milestones": [
+        {
+          "title": "Foundation Portfolio Piece",
+          "description": "Complete Codecademy course project",
+          "deliverables": ["Wireframe set", "Interactive prototype", "Design rationale document"]
+        }
+      ],
+      "reflection_questions": [
+        "How do design systems improve team collaboration?",
+        "What accessibility considerations will you prioritize in future projects?",
+        "How has your design eye developed this week?"
+      ]
+    },
+    {
+      "week_number": 3,
+      "title": "Practical UI Design: Exercise 1 & 2",
+      "objective": "Build design instinct through hands-on exercises focusing on layout and spacing",
+      "daily_tasks": [
+        {
+          "day": "Monday",
+          "description": "Complete LearnUI Exercise 1: Build a visual hierarchy",
+          "resource_link": "https://learnui.design/blog/5-practical-exercises-learn-ui-design-free.html",
+          "deliverable": "Design a 3-column blog layout with proper visual hierarchy. Include before/after comparison."
+        },
+        {
+          "day": "Tuesday",
+          "description": "Continue Exercise 1 and start Exercise 2: Create a proper typographic scale",
+          "resource_link": "https://learnui.design/blog/5-practical-exercises-learn-ui-design-free.html",
+          "deliverable": "Create a typographic scale for headings and body text. Apply it to a sample article layout."
+        },
+        {
+          "day": "Wednesday",
+          "description": "Complete Exercise 2 and analyze professional examples",
+          "resource_link": "https://learnui.design/blog/5-practical-exercises-learn-ui-design-free.html",
+          "deliverable": "Redesign an existing website's typography. Compare your solution with the original."
+        },
+        {
+          "day": "Thursday",
+          "description": "Study spacing and layout principles from Exercise 1",
+          "resource_link": "https://learnui.design/blog/5-practical-exercises-learn-ui-design-free.html",
+          "deliverable": "Create a spacing system (4-6 sizes) and apply it to redesign a cluttered mobile screen."
+        },
+        {
+          "day": "Friday",
+          "description": "Review exercises and practice application",
+          "resource_link": "https://learnui.design/blog/5-practical-exercises-learn-ui-design-free.html",
+          "deliverable": "Apply lessons from both exercises to redesign your Week 1 wireframe. Document improvements made."
+        }
+      ],
+      "portfolio_milestones": [],
+      "reflection_questions": [
+        "How did these exercises change your approach to design?",
+        "What spacing/layout mistakes do you now notice in apps you use?",
+        "How has your confidence in visual design decisions improved?"
+      ]
+    },
+    {
+      "week_number": 4,
+      "title": "Practical UI Design: Exercise 3, 4 & 5",
+      "objective": "Master advanced UI concepts through hands-on exercises in color, interaction, and mobile design",
+      "daily_tasks": [
+        {
+          "day": "Monday",
+          "description": "Complete LearnUI Exercise 3: Use a color palette properly",
+          "resource_link": "https://learnui.design/blog/5-practical-exercises-learn-ui-design-free.html",
+          "deliverable": "Create a 5-color palette and design a mobile settings screen using only those colors."
+        },
+        {
+          "day": "Tuesday",
+          "description": "Complete Exercise 4: Design for different screen sizes",
+          "resource_link": "https://learnui.design/blog/5-practical-exercises-learn-ui-design-free.html",
+          "deliverable": "Design the same content for mobile, tablet, and desktop breakpoints. Show responsive adaptations."
+        },
+        {
+          "day": "Wednesday",
+          "description": "Continue Exercise 4 and start Exercise 5: Create a mobile layout",
+          "resource_link": "https://learnui.design/blog/5-practical-exercises-learn-ui-design-free.html",
+          "deliverable": "Design a mobile-first e-commerce product page with proper touch targets and navigation."
+        },
+        {
+          "day": "Thursday",
+          "description": "Complete Exercise 5 and study interaction patterns",
+          "resource_link": "https://learnui.design/blog/5-practical-exercises-learn-ui-design-free.html",
+          "deliverable": "Design 3 different interaction patterns for a social media 'like' button. Include micro-interactions."
+        },
+        {
+          "day": "Friday",
+          "description": "Review all 5 exercises and create a personal design system",
+          "resource_link": "https://learnui.design/blog/5-practical-exercises-learn-ui-design-free.html",
+          "deliverable": "Compile a personal design system including colors, typography, spacing, and components from exercises."
+        }
+      ],
+      "portfolio_milestones": [
+        {
+          "title": "UI Exercise Collection",
+          "description": "Complete LearnUI 5 Practical Exercises",
+          "deliverables": ["Exercise screenshots", "Before/after comparisons", "Personal design system"]
+        }
+      ],
+      "reflection_questions": [
+        "Which exercise was most challenging and why?",
+        "How have these exercises influenced your design decisions?",
+        "What UI patterns will you incorporate into future projects?"
+      ]
+    },
+    {
+      "week_number": 5,
+      "title": "UX Research & User Journey Mapping",
+      "objective": "Master UX research methods, user journey mapping, and empathy building techniques",
+      "daily_tasks": [
+        {
+          "day": "Monday",
+          "description": "Study user research methods from LearnUX syllabus",
+          "resource_link": "https://learnuiux.in/",
+          "deliverable": "Conduct competitive analysis of 3 similar apps. Create comparison matrix with strengths/weaknesses."
+        },
+        {
+          "day": "Tuesday",
+          "description": "Learn user interview techniques and survey design",
+          "resource_link": "https://learnuiux.in/",
+          "deliverable": "Write a user interview script for a food delivery app. Include 8-10 questions and follow-up probes."
+        },
+        {
+          "day": "Wednesday",
+          "description": "Practice creating user personas and empathy maps",
+          "resource_link": "https://learnuiux.in/",
+          "deliverable": "Create detailed personas for a budgeting app based on real user research data."
+        },
+        {
+          "day": "Thursday",
+          "description": "Learn user journey mapping techniques",
+          "resource_link": "https://learnuiux.in/",
+          "deliverable": "Map the complete user journey for booking a hotel room online. Include touchpoints and pain points."
+        },
+        {
+          "day": "Friday",
+          "description": "Apply research methods to a real problem",
+          "resource_link": "https://learnuiux.in/",
+          "deliverable": "Identify a local problem and conduct basic user research. Create findings report with recommendations."
+        }
+      ],
+      "portfolio_milestones": [],
+      "reflection_questions": [
+        "How does user research change design decisions?",
+        "What biases might affect your research?",
+        "How will you incorporate user insights in future projects?"
+      ]
+    },
+    {
+      "week_number": 6,
+      "title": "Information Architecture & Content Strategy",
+      "objective": "Learn to organize information effectively and develop content strategies for digital products",
+      "daily_tasks": [
+        {
+          "day": "Monday",
+          "description": "Study information architecture principles",
+          "resource_link": "https://learnuiux.in/",
+          "deliverable": "Create a site map for a university website. Include primary, secondary, and tertiary navigation."
+        },
+        {
+          "day": "Tuesday",
+          "description": "Learn card sorting and user testing for IA",
+          "resource_link": "https://learnuiux.in/",
+          "deliverable": "Conduct a card sorting exercise for an e-commerce site. Document methodology and results."
+        },
+        {
+          "day": "Wednesday",
+          "description": "Practice content inventory and audit techniques",
+          "resource_link": "https://learnuiux.in/",
+          "deliverable": "Perform content audit of a website you use frequently. Identify content gaps and redundancies."
+        },
+        {
+          "day": "Thursday",
+          "description": "Learn content strategy and microcopy writing",
+          "resource_link": "https://learnuiux.in/",
+          "deliverable": "Write microcopy for a fitness tracking app. Include onboarding, error messages, and success states."
+        },
+        {
+          "day": "Friday",
+          "description": "Apply IA and content strategy to redesign",
+          "resource_link": "https://learnuiux.in/",
+          "deliverable": "Redesign the information architecture of a confusing website. Present before/after comparison."
+        }
+      ],
+      "portfolio_milestones": [],
+      "reflection_questions": [
+        "How does poor IA affect user experience?",
+        "What role does content play in design?",
+        "How will you approach IA in future projects?"
+      ]
+    },
+    {
+      "week_number": 7,
+      "title": "Interaction Design & Micro-interactions",
+      "objective": "Master interaction design patterns, micro-interactions, and animation principles",
+      "daily_tasks": [
+        {
+          "day": "Monday",
+          "description": "Study interaction design patterns and principles",
+          "resource_link": "https://learnuiux.in/",
+          "deliverable": "Document 10 common interaction patterns with examples from apps you use daily."
+        },
+        {
+          "day": "Tuesday",
+          "description": "Learn micro-interaction design",
+          "resource_link": "https://learnuiux.in/",
+          "deliverable": "Design micro-interactions for form validation states (success, error, loading)."
+        },
+        {
+          "day": "Wednesday",
+          "description": "Practice animation principles and timing",
+          "resource_link": "https://learnuiux.in/",
+          "deliverable": "Create an animated prototype showing state changes in a toggle switch."
+        },
+        {
+          "day": "Thursday",
+          "description": "Study gesture-based interactions",
+          "resource_link": "https://learnuiux.in/",
+          "deliverable": "Design gesture interactions for a mobile photo gallery app."
+        },
+        {
+          "day": "Friday",
+          "description": "Apply interaction design to a complex flow",
+          "resource_link": "https://learnuiux.in/",
+          "deliverable": "Design the complete interaction flow for a multi-step form with validation and feedback."
+        }
+      ],
+      "portfolio_milestones": [],
+      "reflection_questions": [
+        "How do micro-interactions enhance user experience?",
+        "What makes a good interaction feel 'right'?",
+        "How will you incorporate motion design in future work?"
+      ]
+    },
+    {
+      "week_number": 8,
+      "title": "Usability Testing & Iteration",
+      "objective": "Learn usability testing methodologies, data analysis, and iterative design processes",
+      "daily_tasks": [
+        {
+          "day": "Monday",
+          "description": "Study usability testing methods and planning",
+          "resource_link": "https://learnuiux.in/",
+          "deliverable": "Create a complete usability test plan for a mobile shopping app. Include test objectives and methodology."
+        },
+        {
+          "day": "Tuesday",
+          "description": "Learn how to moderate usability tests",
+          "resource_link": "https://learnuiux.in/",
+          "deliverable": "Write a moderator script for testing an e-commerce checkout flow."
+        },
+        {
+          "day": "Wednesday",
+          "description": "Practice analyzing usability test results",
+          "resource_link": "https://learnuiux.in/",
+          "deliverable": "Analyze sample usability test data and create findings report with severity ratings."
+        },
+        {
+          "day": "Thursday",
+          "description": "Learn A/B testing and quantitative methods",
+          "resource_link": "https://learnuiux.in/",
+          "deliverable": "Design an A/B test for comparing two button designs. Include hypothesis and success metrics."
+        },
+        {
+          "day": "Friday",
+          "description": "Apply iterative design process",
+          "resource_link": "https://learnuiux.in/",
+          "deliverable": "Take a design from Week 2 and iterate based on hypothetical user feedback. Show 3 versions."
+        }
+      ],
+      "portfolio_milestones": [
+        {
+          "title": "Research & Testing Portfolio",
+          "description": "Complete research methods and testing deliverables",
+          "deliverables": ["User research report", "Usability test plan", "Iteration case study"]
+        }
+      ],
+      "reflection_questions": [
+        "How has usability testing changed your design approach?",
+        "What metrics matter most for YC startups?",
+        "How will you incorporate user feedback in your process?"
+      ]
+    },
+    {
+      "week_number": 9,
+      "title": "Design Systems & Component Libraries",
+      "objective": "Build comprehensive design systems and create reusable component libraries",
+      "daily_tasks": [
+        {
+          "day": "Monday",
+          "description": "Study design system principles and structure",
+          "resource_link": "https://learnuiux.in/",
+          "deliverable": "Create a design system inventory for a popular app. Document colors, typography, and components."
+        },
+        {
+          "day": "Tuesday",
+          "description": "Learn component library creation",
+          "resource_link": "https://learnuiux.in/",
+          "deliverable": "Design a button component library with variants (primary, secondary, ghost) and states."
+        },
+        {
+          "day": "Wednesday",
+          "description": "Practice design token implementation",
+          "resource_link": "https://learnuiux.in/",
+          "deliverable": "Create a design token system for spacing, colors, and typography scales."
+        },
+        {
+          "day": "Thursday",
+          "description": "Study responsive design systems",
+          "resource_link": "https://learnuiux.in/",
+          "deliverable": "Adapt your component library for mobile, tablet, and desktop breakpoints."
+        },
+        {
+          "day": "Friday",
+          "description": "Apply design system to a real project",
+          "resource_link": "https://learnuiux.in/",
+          "deliverable": "Build a screen using your design system. Document component usage and rationale."
+        }
+      ],
+      "portfolio_milestones": [],
+      "reflection_questions": [
+        "How do design systems improve design consistency?",
+        "What challenges arise when implementing design systems?",
+        "How will you maintain design systems in a startup environment?"
+      ]
+    },
+    {
+      "week_number": 10,
+      "title": "YC Startup Design: Product-Market Fit Focus",
+      "objective": "Learn startup-specific design practices, rapid prototyping, and product-market fit validation",
+      "daily_tasks": [
+        {
+          "day": "Monday",
+          "description": "Study YC startup design principles and constraints",
+          "resource_link": "https://www.ycombinator.com/companies/",
+          "deliverable": "Analyze 3 YC companies' product designs. Identify patterns in their approach to MVPs."
+        },
+        {
+          "day": "Tuesday",
+          "description": "Learn rapid prototyping for startups",
+          "resource_link": "https://www.designkit.org/methods",
+          "deliverable": "Create 5 different MVP concepts for a local service problem. Use rapid sketching techniques."
+        },
+        {
+          "day": "Wednesday",
+          "description": "Practice design for growth and metrics",
+          "resource_link": "https://www.reforge.com/",
+          "deliverable": "Design user onboarding flow optimized for conversion. Include A/B test hypotheses."
+        },
+        {
+          "day": "Thursday",
+          "description": "Study startup user acquisition design",
+          "resource_link": "https://www.ycombinator.com/apply/",
+          "deliverable": "Design landing page for a hypothetical YC startup. Focus on conversion and messaging."
+        },
+        {
+          "day": "Friday",
+          "description": "Apply startup design principles to case study",
+          "resource_link": "https://www.ycombinator.com/companies/",
+          "deliverable": "Redesign an existing startup's key screen based on growth metrics and user feedback."
+        }
+      ],
+      "portfolio_milestones": [],
+      "reflection_questions": [
+        "How does startup design differ from enterprise design?",
+        "What metrics should YC startups prioritize?",
+        "How will you adapt your design process for fast-moving startups?"
+      ]
+    },
+    {
+      "week_number": 11,
+      "title": "Advanced Projects & Portfolio Development",
+      "objective": "Build comprehensive case studies and develop a professional portfolio for YC internships",
+      "daily_tasks": [
+        {
+          "day": "Monday",
+          "description": "Create detailed case study structure",
+          "resource_link": "https://www.behance.net/",
+          "deliverable": "Outline a complete case study for one of your projects. Include problem, process, solution, and results."
+        },
+        {
+          "day": "Tuesday",
+          "description": "Develop portfolio presentation skills",
+          "resource_link": "https://www.notion.so/",
+          "deliverable": "Create portfolio website structure with project sections, about page, and contact information."
+        },
+        {
+          "day": "Wednesday",
+          "description": "Practice explaining design decisions",
+          "resource_link": "https://www.figma.com/",
+          "deliverable": "Record yourself explaining the design process for a recent project. Focus on rationale and trade-offs."
+        },
+        {
+          "day": "Thursday",
+          "description": "Build comprehensive project documentation",
+          "resource_link": "https://www.behance.net/",
+          "deliverable": "Document a complete project from research to final design. Include all artifacts and rationale."
+        },
+        {
+          "day": "Friday",
+          "description": "Refine portfolio based on feedback principles",
+          "resource_link": "https://www.dribbble.com/",
+          "deliverable": "Get feedback on 2 portfolio pieces and implement improvements. Document changes made."
+        }
+      ],
+      "portfolio_milestones": [],
+      "reflection_questions": [
+        "What makes a compelling design portfolio?",
+        "How do you explain complex design decisions simply?",
+        "What gaps remain in your portfolio?"
+      ]
+    },
+    {
+      "week_number": 12,
+      "title": "Internship Preparation & Final Portfolio",
+      "objective": "Finalize portfolio, practice interview skills, and prepare for YC startup internships",
+      "daily_tasks": [
+        {
+          "day": "Monday",
+          "description": "Research YC startup internship requirements",
+          "resource_link": "https://www.ycombinator.com/companies/",
+          "deliverable": "Create list of 10 YC startups hiring designers. Note their design challenges and requirements."
+        },
+        {
+          "day": "Tuesday",
+          "description": "Practice design interview questions",
+          "resource_link": "https://www.figma.com/",
+          "deliverable": "Complete 5 common design interview exercises: redesign, critique, whiteboarding."
+        },
+        {
+          "day": "Wednesday",
+          "description": "Build internship application materials",
+          "resource_link": "https://www.linkedin.com/",
+          "deliverable": "Write cover letter and update LinkedIn profile optimized for YC startup design roles."
+        },
+        {
+          "day": "Thursday",
+          "description": "Finalize portfolio and case studies",
+          "resource_link": "https://www.behance.net/",
+          "deliverable": "Complete 3 polished case studies with final presentation. Ensure Figma files are shareable."
+        },
+        {
+          "day": "Friday",
+          "description": "Mock internship interviews and final review",
+          "resource_link": "https://www.ycombinator.com/apply/",
+          "deliverable": "Conduct mock interview with portfolio walkthrough. Record and self-assess performance."
+        }
+      ],
+      "portfolio_milestones": [
+        {
+          "title": "Complete Internship-Ready Portfolio",
+          "description": "Final portfolio with 3-5 case studies, resume, and application materials",
+          "deliverables": ["Portfolio website", "Case study PDFs", "Resume", "Cover letter", "LinkedIn optimization"]
+        }
+      ],
+      "reflection_questions": [
+        "What have you learned about yourself as a designer?",
+        "How has your design thinking evolved over 12 weeks?",
+        "What are your goals for your first design internship?",
+        "How will you continue learning after this curriculum?"
+      ]
+    }
+  ],
+  "additional_resources": [
+    {
+      "name": "Figma",
+      "link": "https://www.figma.com/",
+      "description": "Free design tool for UI/UX design and prototyping"
+    },
+    {
+      "name": "Miro",
+      "link": "https://miro.com/",
+      "description": "Digital whiteboard for user journey mapping and ideation"
+    },
+    {
+      "name": "Notion",
+      "link": "https://www.notion.so/",
+      "description": "All-in-one workspace for documentation and project management"
+    },
+    {
+      "name": "Dribbble",
+      "link": "https://dribbble.com/",
+      "description": "Design inspiration and portfolio showcase platform"
+    },
+    {
+      "name": "Behance",
+      "link": "https://www.behance.net/",
+      "description": "Professional portfolio platform for designers"
+    }
+  ],
+  "success_metrics": [
+    "Complete all weekly deliverables",
+    "Build 3-5 comprehensive case studies",
+    "Create professional portfolio website",
+    "Pass mock design interviews",
+    "Apply to 5+ YC startup internships"
+  ]
+}
